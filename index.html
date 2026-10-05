@@ -995,6 +995,26 @@
         }
 
         console.log("Anime Wiser IST:", getCurrentIST());
+
+        const nowTimeElement = document.querySelector(".now-time");
+
+function updateNowTime() {
+    const now = getIndiaTime();
+
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+
+    const period = hours >= 12 ? "PM" : "AM";
+
+    hours = hours % 12 || 12;
+
+    nowTimeElement.textContent =
+        `${String(hours).padStart(2, "0")}:${minutes} ${period}`;
+}
+
+updateNowTime();
+setInterval(updateNowTime, 1000);
+         
     </script>
 
 </body>
