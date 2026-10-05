@@ -157,6 +157,99 @@
         font-size: 15px;
     }
 }
+         .releases {
+    padding: 70px 6%;
+    background: #09090f;
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.section-label {
+    color: #a855f7;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-header h2 {
+    margin-top: 6px;
+    font-size: 32px;
+}
+
+.section-header a {
+    color: #a855f7;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.release-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.release-card {
+    background: #12121c;
+    border: 1px solid #242434;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+
+.release-card:hover {
+    transform: translateY(-5px);
+    border-color: #a855f7;
+}
+
+.release-image {
+    height: 260px;
+    background: #1b1b28;
+}
+
+.release-info {
+    padding: 18px;
+}
+
+.release-info h3 {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.release-info p {
+    color: #a1a1b5;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.release-info span {
+    color: #22d3ee;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+@media (max-width: 700px) {
+    .releases {
+        padding: 50px 5%;
+    }
+
+    .section-header h2 {
+        font-size: 25px;
+    }
+
+    .release-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .release-image {
+        height: 300px;
+    }
+}
     </style>
 </head>
 
