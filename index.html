@@ -210,9 +210,23 @@
 
 .release-image {
     aspect-ratio: 2 / 3;
-    background: #1b1b28;
+    background-color: #1b1b28;
     background-size: cover;
     background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.release-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(9, 9, 15, 0.35),
+        transparent 45%
+    );
+    pointer-events: none;
 }
 
 .release-info {
