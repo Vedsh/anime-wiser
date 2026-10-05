@@ -188,10 +188,26 @@
 }
 
 .section-header a {
-    color: #a855f7;
+    color: #d4d4dc;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
+}
+
+.view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 15px;
+    border: 1px solid #303041;
+    border-radius: 8px;
+    background: #12121c;
+    transition: 0.25s ease;
+}
+
+.view-all-btn:hover {
+    color: #ffffff;
+    border-color: #a855f7;
+    background: #181522;
 }
 
 .release-grid {
@@ -370,7 +386,7 @@
             <span class="section-label">NEW</span>
             <h2>Latest Releases</h2>
         </div>
-        <a href="#">View All</a>
+        <a href="#" class="view-all-btn">View All Releases</a>
     </div>
 
     <div class="release-grid">
