@@ -72,6 +72,91 @@
             }
 
         }
+        .hero {
+    min-height: 520px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            #09090f 0%,
+            rgba(9, 9, 15, 0.82) 35%,
+            rgba(9, 9, 15, 0.25) 100%
+        ),
+        url("https://u.livechart.me/anime_visuals/local_version/19121/image/ac55101d263bc408bbd067636419b1f2.webp/large.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    width: 55%;
+    padding: 70px 6%;
+}
+
+.hero-label {
+    color: #a855f7;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    margin: 14px 0;
+}
+
+.hero p {
+    color: #d4d4dc;
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 520px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.primary-btn {
+    background: #a855f7;
+    color: white;
+}
+
+.secondary-btn {
+    border: 1px solid #555566;
+    color: white;
+}
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 500px;
+        background-position: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 40px 5%;
+        margin-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+}
     </style>
 </head>
 
@@ -91,6 +176,28 @@
         <div class="search">⌕</div>
 
     </header>
+     
+     <section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">FEATURED ANIME</span>
+
+        <h1>Black Clover</h1>
+
+        <p>
+            Follow the latest updates, episodes and release information
+            for Black Clover on Anime Wiser.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#" class="primary-btn">View Details</a>
+            <a href="#" class="secondary-btn">Episode Info</a>
+        </div>
+
+    </div>
+
+</section>
 
 </body>
 </html>
