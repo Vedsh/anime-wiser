@@ -1058,6 +1058,83 @@ setInterval(updateNowTime, 1000);
         list.appendChild(nowElement);
     }
 }
+         function moveNowLine() {
+    const now = getIndiaTime();
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+    const items = Array.from(
+        document.querySelectorAll(".schedule-item")
+    );
+
+    const nowElement = document.querySelector(".schedule-now");
+
+    if (!items.length || !nowElement) return;
+
+    let previousItem = null;
+    let nextItem = null;
+
+    items.forEach((item) => {
+        const timeText = item.querySelector(".schedule-time")?.textContent.trim();
+        const match = timeText?.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+
+        if (!match) return;
+
+        let hours = parseInt(match[1]);
+        const minutes = parseInt(match[2]);
+        const period = match[3].toUpperCase();
+
+        if (period === "PM" && hours !== 12) hours += 12;
+        if (period === "AM" && hours === 12) hours = 0;
+
+        const itemMinutes = hours * 60 + minutes;
+
+        if (itemMinutes <= currentMinutes) {
+            previousItem = item;
+        } else if (!nextItem) {
+            nextItem = item;
+        }
+    });
+
+    if (previousItem && nextItem) {
+        const previousBottom = previousItem.offsetTop + previousItem.offsetHeight;
+        const nextTop = nextItem.offsetTop;
+
+        const previousTime = getTimeInMinutes(previousItem);
+        const nextTime = getTimeInMinutes(nextItem);
+
+        const progress =
+            (currentMinutes - previousTime) /
+            (nextTime - previousTime);
+
+        const position =
+            previousBottom +
+            (nextTop - previousBottom) * progress;
+
+        nowElement.style.position = "absolute";
+        nowElement.style.left = "0";
+        nowElement.style.right = "0";
+        nowElement.style.top = `${position}px`;
+    }
+}
+
+function getTimeInMinutes(item) {
+    const timeText = item.querySelector(".schedule-time")?.textContent.trim();
+    const match = timeText?.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+
+    if (!match) return 0;
+
+    let hours = parseInt(match[1]);
+    const minutes = parseInt(match[2]);
+    const period = match[3].toUpperCase();
+
+    if (period === "PM" && hours !== 12) hours += 12;
+    if (period === "AM" && hours === 12) hours = 0;
+
+    return hours * 60 + minutes;
+}
+
+moveNowLine();
+setInterval(moveNowLine, 1000);
 
 updateSchedulePosition();
 setInterval(updateSchedulePosition, 60000);
