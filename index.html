@@ -694,6 +694,54 @@
         min-height: 76px;
     }
 }
+         .schedule-now {
+    position: relative;
+    height: 34px;
+    display: flex;
+    align-items: center;
+}
+
+.now-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #303042;
+}
+
+.now-marker {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0 auto;
+    padding: 5px 10px;
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 6px;
+    background: #0b0b12;
+}
+
+.now-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22d3ee;
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+}
+
+.now-text {
+    color: #a855f7;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.now-time {
+    color: #a1a1b5;
+    font-size: 10px;
+    font-weight: 700;
+}
          
     </style>
 </head>
@@ -874,6 +922,15 @@
 
 
         <div class="schedule-list">
+
+             <div class="schedule-now">
+    <div class="now-line"></div>
+    <div class="now-marker">
+        <span class="now-dot"></span>
+        <span class="now-text">NOW</span>
+        <span class="now-time">--:--</span>
+    </div>
+</div>
 
             <div class="schedule-item">
                 <div class="schedule-time">08:30 AM</div>
