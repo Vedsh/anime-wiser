@@ -3,12 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Anime Wiser</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #09090f;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            width: 100%;
+            padding: 18px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0d0d16;
+            border-bottom: 1px solid #252535;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #a855f7;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #d4d4dc;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #a855f7;
+        }
+
+        .search {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 16px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>Anime Wiser</h1>
-    <p>Stay Updated, Stay Wiser.</p>
+    <header>
+
+        <a href="#" class="logo">Anime Wiser</a>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Latest</a>
+            <a href="#">Schedule</a>
+            <a href="#">Anime</a>
+        </nav>
+
+        <div class="search">⌕</div>
+
+    </header>
 
 </body>
 </html>
