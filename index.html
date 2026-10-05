@@ -197,14 +197,15 @@
 .release-card {
     background: #12121c;
     border: 1px solid #242434;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
-    transition: 0.25s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .release-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     border-color: #a855f7;
+    box-shadow: 0 12px 30px rgba(168, 85, 247, 0.16);
 }
 
 .release-image {
