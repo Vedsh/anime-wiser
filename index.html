@@ -916,5 +916,29 @@
 
 </div>
 
+         <!-- baaki website ka content -->
+
+    <script>
+        function getIndiaTime() {
+            return new Date(
+                new Date().toLocaleString("en-US", {
+                    timeZone: "Asia/Kolkata"
+                })
+            );
+        }
+
+        function getCurrentIST() {
+            const now = getIndiaTime();
+
+            return {
+                hours: now.getHours(),
+                minutes: now.getMinutes(),
+                seconds: now.getSeconds()
+            };
+        }
+
+        console.log("Anime Wiser IST:", getCurrentIST());
+    </script>
+
 </body>
 </html>
